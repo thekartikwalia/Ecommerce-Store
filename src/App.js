@@ -2,13 +2,22 @@ import { useState } from "react";
 import Header from "./components/Header/Header";
 import Products from "./components/Products/Products";
 import Cart from "./components/Cart/Cart";
+import AddProduct from "./components/AddProduct/AddProduct";
+
+import initialProducts from "./data/products.json"
 
 function App() {
   const [showCart, setShowCart] = useState(false);
+  const [showAddProduct, setShowAddProduct] = useState(false);
+
   const [cartItems, setCartItems] = useState([]);
+  const [products, setProducts] = useState(initialProducts);
 
   const openCart = () => setShowCart(true);
   const closeCart = () => setShowCart(false);
+
+  const openAddProduct = () => setShowAddProduct(true);
+  const closeAddProduct = () => setShowAddProduct(false);
 
   const handleAddToCart = (productId, productName, productImage) => {
     const productInCartIndex = cartItems.findIndex(
@@ -57,14 +66,18 @@ function App() {
 
   return (
     <div>
-      <Header openCart={openCart} />
-      <Products onAddToCart={handleAddToCart} />
+      <Header openCart={openCart} openAddProduct={openAddProduct} />
+      <Products products={products} onAddToCart={handleAddToCart} />
       <Cart
         showCart={showCart}
         closeCart={closeCart}
         cartItems={cartItems}
         onIncQuantity={handleIncreaseQuantity}
         onDecQuantity={handleDecreaseQuantity}
+      />
+      <AddProduct
+      showAddProduct={showAddProduct}
+      onCloseAddProduct={closeAddProduct}
       />
     </div>
   );
