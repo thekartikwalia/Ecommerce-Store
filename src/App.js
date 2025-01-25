@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import Header from "./components/Header/Header";
 import Products from "./components/Products/Products";
@@ -76,7 +77,7 @@ function App() {
   }
 
   return (
-    <div>
+    <React.Fragment>    {/* can be replaced with <> */}
       <Header openCart={openCart} openAddProduct={openAddProduct} />
       <Products products={products} onAddToCart={handleAddToCart} />
       <Cart
@@ -91,7 +92,7 @@ function App() {
       onCloseAddProduct={closeAddProduct}
       onAddProduct={handleAddProduct}
       />
-    </div>
+    </React.Fragment>    // can be replaced with </> 
   );
 }
 

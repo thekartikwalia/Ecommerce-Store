@@ -3,7 +3,7 @@ import "./Header.css";
 function Header({ openCart, openAddProduct }) {
   return (
     <div className="header">
-      <h1>React Store</h1>
+      <h1>Ecommerce Store</h1>
       <div>
         <button
           className="yellow-button"
