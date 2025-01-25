@@ -16,8 +16,9 @@ This is a fully functional e-commerce store built using React. The project aims 
 - **State Management**: Implemented React's `useState` hook to manage cart items, product list, and modal visibility.
 - **Props and Component Reusability**: Created reusable components and passed props to manage product data and cart functionality.
 - **Conditional Rendering**: Displayed modals and cart details based on the current state of the application.
-- **Event Handling**: Applied event propagation concepts like capturing and bubbling to handle user interactions effectively.
-- **2-Way Data Binding**: Used both `useRef` and `useState` to bind form inputs to state and ensure real-time updates.
+- **Event Handling (Bubbling and Capturing)**: Applied event propagation concepts like capturing and bubbling to handle user interactions effectively.
+- **2-Way Data Binding**: Used both useRef and useState to bind form inputs to state and ensure real-time updates.
+- **React Portals**: Utilized React Portals to render modals and overlays outside of the main DOM hierarchy for better user experience and UI management.
 - **Optimization**: Optimized code for performance, including efficient use of array methods and React’s built-in hooks.
 
 ## Installation
