@@ -64,6 +64,17 @@ function App() {
     setCartItems(updatedCartItems);
   };
 
+  const handleAddProduct = (productName) => {
+    // console.log(productName);
+    const product = {
+      id: products.length + 1,
+      name: productName,
+      image: "default_product.png",
+    }
+    setProducts((state) => [...state, product]);
+    closeAddProduct();  // so that on clicking add product, the modal gets closed
+  }
+
   return (
     <div>
       <Header openCart={openCart} openAddProduct={openAddProduct} />
@@ -78,6 +89,7 @@ function App() {
       <AddProduct
       showAddProduct={showAddProduct}
       onCloseAddProduct={closeAddProduct}
+      onAddProduct={handleAddProduct}
       />
     </div>
   );
