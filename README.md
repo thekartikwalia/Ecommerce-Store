@@ -12,6 +12,15 @@ This is a fully functional e-commerce store built using React. The project aims 
 - **React Portals**: Leverage React Portals to render modals and other components outside the root div for better UI handling.
 - **Event Propagation**: Understand and apply event capturing and bubbling techniques for efficient event handling.
 
+## Component Tree
+```mermaid
+graph TD 
+    A[App] --> B[Header] 
+    A[App] --> C[Products] --> D[Product]
+    A[App] --> E[Cart] --> F[Modal] --> G[CartItem]
+    A[App] --> H[AddProduct] --> I[Modal]
+```
+
 ## Concepts Learned
 - **State Management**: Implemented React's `useState` hook to manage cart items, product list, and modal visibility.
 - **Props and Component Reusability**: Created reusable components and passed props to manage product data and cart functionality.
@@ -22,7 +31,6 @@ This is a fully functional e-commerce store built using React. The project aims 
 - **Optimization**: Optimized code for performance, including efficient use of array methods and React’s built-in hooks.
 
 ## Installation
-
 1. Clone the repository to your local machine:
    ```bash
    git clone https://github.com/thekartikwalia/Ecommerce-Store.git
@@ -35,6 +43,7 @@ This is a fully functional e-commerce store built using React. The project aims 
 4. Start the development server:
     ```bash
     npm start
+
 ## Usage
 - Browse the product list and add products to your cart.
 - Open the cart modal to view the items added to the cart.
